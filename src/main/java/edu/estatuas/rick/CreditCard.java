@@ -4,12 +4,13 @@ public class CreditCard {
 
     private final String owner;
     private final String number;
-    private double credit;
+    private  double credit;
     private String SYMBOL;
 
-    CreditCard(String owner, String number) {
+    CreditCard(String owner, String number,double credit) {
         this.owner = owner;
         this.number = number;
+        this.credit = credit;
     }
 
     public String getOwner() {
@@ -21,10 +22,13 @@ public class CreditCard {
     }
     public double credit() {
         return this.credit;
+    }public void setCredit(double credit) {
+        this.credit = credit;
+    }
+    @Override
+    public String toString() {
+        return "owner: " + this.getOwner() + "\n number: " + this.number();
     }
 
-    public String toString() {
-        return "owner: " + this.getOwner() + " number: " + this.number();
-    }
 
 }
