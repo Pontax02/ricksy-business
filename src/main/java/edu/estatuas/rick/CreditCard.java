@@ -25,6 +25,17 @@ public class CreditCard {
     }public void setCredit(double credit) {
         this.credit = credit;
     }
+
+    public boolean pay(double amount) {
+        if (this.credit >= amount) {
+            this.credit -= amount;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     @Override
     public String toString() {
         return "owner: " + this.getOwner() + "\n number: " + this.number();
