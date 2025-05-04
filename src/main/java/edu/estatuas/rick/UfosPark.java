@@ -7,27 +7,35 @@ import java.util.Map;
 
 public class UfosPark implements GuestDispatcher {
 
-    private int fee;
+    private int FEE = 500;
     public Map<String,String> flota = new HashMap<String,String>();
 
     public UfosPark() {}
 
     public void add(String ufo){
-        this.flota.put(null,ufo);
+        this.flota.put(ufo,null);
     }
-    public void assignUfo(String user,String ufo){
-        this.flota.put(user,ufo);
+    public void assignUfo(String ufo,String user){
+        this.flota.put(ufo,user);
     }
 
-    public String getUfoOf(String ufo){
-        return this.flota.get(ufo);
+    public String getUfoOf(String user){
+            String ufoSold = "";
+
+                for (Map.Entry<String, String> entry : flota.entrySet()) {
+                    if (entry.getValue() == user) {
+                        ufoSold = entry.getKey();
+                    }
+                }
+
+            return ufoSold;
     }
     public String getUfo(){
 
         String ufoSelected ="";
         for (Map.Entry<String,String> entry : this.flota.entrySet()) {
-            if(entry.getKey()==null) {
-                ufoSelected = entry.getValue();
+            if(entry.getValue() == null) {
+                ufoSelected = entry.getKey();
             }
         }
         return ufoSelected;
@@ -35,14 +43,13 @@ public class UfosPark implements GuestDispatcher {
 
     @Override
     public void dispatch(CreditCard card) {
+        if (this.flota.containsValue(null)) {
+            if ((getUfoOf(card.number()) == "") && card.pay(FEE)) {
+                assignUfo(getUfo(), card.number());
 
-        if (card.credit() > 500 && !flota.containsKey(card.number())) {
-            card.setCredit(card.credit() - 500);
-            assignUfo(card.number(),getUfo());
-
-        }
-        else {
-            card.setCredit(card.credit());
+            } else {
+                card.setCredit(card.credit());
+            }
         }
     }
 }
