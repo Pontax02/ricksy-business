@@ -134,27 +134,27 @@ public class App {
          * uno de ellos, que es de 50 EZIs
          */
 
-       //CrystalExpender packExpender = new CrystalExpender(3, 50);
+       CrystalExpender packExpender = new CrystalExpender(3, 50);
 
         // Muestra el total de packs y su precio unidad
-        //System.out.println("\nPacks\n" +
-        //        "=====");
-        // System.out.println(packExpender);
+        System.out.println("\nPacks\n" +
+              "=====");
+         System.out.println(packExpender);
 
         // Abradolph compra su pack de bienvenida
-        // packExpender.dispatch(abradolph);
+         packExpender.dispatch(abradolph);
 
-        // System.out.println("\nAbradolph compra su pack\n" +
-        //         "========================");
-        //  System.out.println("Packs\n" + packExpender);
-        //  System.out.println("Credito de Abradolph: " + abradolph.credit());
+         System.out.println("\nAbradolph compra su pack\n" +
+                 "========================");
+          System.out.println("Packs\n" + packExpender);
+          System.out.println("Credito de Abradolph: " + abradolph.credit());
 
         // El pobre GerHead no tiene crédito para comprar su pack
-        // System.out.println("\nGearHead sin credito para su pack\n" +
-        //        "=================================");
-        // packExpender.dispatch(gearHead);
-        // System.out.println("Packs\n" + packExpender);
-        //   System.out.println("Credito de GearHead: " + gearHead.credit());
+        System.out.println("\nGearHead sin credito para su pack\n" +
+                "=================================");
+         packExpender.dispatch(gearHead);
+         System.out.println("Packs\n" + packExpender);
+           System.out.println("Credito de GearHead: " + gearHead.credit());
 
 
         /**
@@ -167,9 +167,9 @@ public class App {
          * y CrystalDispatcher al receptivo
          */
 
-        //  Receptivo receptivo = new Receptivo();
-        // receptivo.registra(packExpender);
-        // receptivo.registra(ufosPark);
+         Receptivo receptivo = Receptivo.getReceptivo();
+         receptivo.registra(packExpender);
+         receptivo.registra(ufosPark);
 
         // Implementa el metodo receptivo.dispatch()
         // para que invoque a UfosPark.dispatch()
@@ -177,19 +177,19 @@ public class App {
 
         // Squanchy reserva ovni (ya tiene) y pack
 
-        // System.out.println("\nLLega Squanchy!\n" +
-        //        "===============");
-        // receptivo.dispatch(squanchy);
-        // mostrarReserva(squanchy, packExpender, ufosPark);
+         System.out.println("\nLLega Squanchy!\n" +
+                "===============");
+         receptivo.dispatch(squanchy);
+         mostrarReserva(squanchy, packExpender, ufosPark);
 
         // Gearhead reserva ovni y pack.
         // No tiene crédito.
 
-        // System.out.println("\nLLega GearHead!\n" +
-        //         "===============");
-        //  gearHead.pay(3000); // no tiene crédito
-        // receptivo.dispatch(gearHead);
-        // mostrarReserva(gearHead, packExpender, ufosPark);
+         System.out.println("\nLLega GearHead!\n" +
+                 "===============");
+          gearHead.pay(3000); // no tiene crédito
+         receptivo.dispatch(gearHead);
+         mostrarReserva(gearHead, packExpender, ufosPark);
 
         // Birdpearson es recibido en la fiesta
 
@@ -225,9 +225,9 @@ public class App {
         // tu código aquí
     }
 
-    // private static void mostrarReserva(CreditCard card, CrystalExpender expender, UfosPark ufos) {
-    //   System.out.println(card);
-    //  System.out.println("Packs: " + expender.stock());
-    //    System.out.println("Ovni: " + ufos.getUfoOf(card.number()));
-    //}
+     private static void mostrarReserva(CreditCard card, CrystalExpender expender, UfosPark ufos) {
+       System.out.println(card);
+      System.out.println("Packs: " + expender.stock());
+        System.out.println("Ovni: " + ufos.getUfoOf(card.number()));
+    }
 }
