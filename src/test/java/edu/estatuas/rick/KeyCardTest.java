@@ -12,7 +12,7 @@ public class KeyCardTest {
 
     @Before
     public void setupCard() {
-        card = new CreditCard("Abradolf Lincler", "4916119711304546",3000);
+        card = new CreditCard("Abradolf Lincler", "4916119711304546");
         assertNotNull("CreditCard creada", card);
     }
     @Test public void constructorTest() {
