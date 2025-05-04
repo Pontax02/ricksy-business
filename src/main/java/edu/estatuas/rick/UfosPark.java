@@ -52,4 +52,10 @@ public class UfosPark implements GuestDispatcher {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        List<String> keyList = new ArrayList<>(this.flota.keySet());
+        return keyList.toString();
+    }
 }
