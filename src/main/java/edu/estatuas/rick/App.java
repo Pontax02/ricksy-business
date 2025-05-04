@@ -193,19 +193,19 @@ public class App {
 
         // Birdpearson es recibido en la fiesta
 
-        // System.out.println("\nLLega Birdpearson!\n" +
-        //        "==================");
-        //CreditCard birdpearson = new CreditCard("Birdpearson", "1111111111111111");
-        // receptivo.dispatch(birdpearson);
-        // mostrarReserva(birdpearson, packExpender, ufosPark);
+         System.out.println("\nLLega Birdpearson!\n" +
+                "==================");
+        CreditCard birdpearson = new CreditCard("Birdpearson", "1111111111111111");
+         receptivo.dispatch(birdpearson);
+         mostrarReserva(birdpearson, packExpender, ufosPark);
 
         // Morty intenta reserver un ovni y un pack pero no quedan
 
-        // System.out.println("\nMorty quiere pack y ovni pero no quedan :(\n" +
-        //         "==========================================");
-        // morty = new CreditCard("Morty", "0000000000000000");
-        // receptivo.dispatch(morty);
-        // mostrarReserva(morty, packExpender, ufosPark);
+         System.out.println("\nMorty quiere pack y ovni pero no quedan :(\n" +
+                 "==========================================");
+         morty = new CreditCard("Morty", "0000000000000000");
+         receptivo.dispatch(morty);
+         mostrarReserva(morty, packExpender, ufosPark);
 
 
         /**
