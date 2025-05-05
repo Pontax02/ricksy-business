@@ -5,7 +5,7 @@ public class CreditCard {
     private final String owner;
     private final String number;
     private  double credit = 3000;
-    private String SYMBOL;
+    private String SYMBOL = "EZI";
 
     CreditCard(String owner, String number) {
         this.owner = owner;
@@ -22,7 +22,12 @@ public class CreditCard {
     }
     public double credit() {
         return this.credit;
-    }public void setCredit(double credit) {
+
+    }
+    String getSYMBOL() {
+        return this.SYMBOL;
+    }
+    public void setCredit(double credit) {
         this.credit = credit;
     }
 
@@ -39,7 +44,7 @@ public class CreditCard {
 
     @Override
     public String toString() {
-        return "owner: " + this.getOwner() + "\n number: " + this.number();
+        return "owner: " + this.getOwner() + "\n number: " + this.number() + "\n credit: " + this.credit() + this.getSYMBOL();
     }
 
 
