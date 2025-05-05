@@ -12,14 +12,14 @@ public class UfosPark implements GuestDispatcher {
 
     public UfosPark() {}
 
-    public void add(String ufo){
+    void add(String ufo){
         this.flota.put(ufo,null);
     }
     public void assignUfo(String ufo,String user){
         this.flota.put(ufo,user);
     }
 
-    public String getUfoOf(String user){
+    String getUfoOf(String user){
             String ufoSold = "";
 
                 for (Map.Entry<String, String> entry : flota.entrySet()) {
