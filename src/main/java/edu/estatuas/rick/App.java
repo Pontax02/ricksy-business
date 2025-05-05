@@ -1,5 +1,8 @@
 package edu.estatuas.rick;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Ricksy Business
  * ===============
@@ -223,6 +226,25 @@ public class App {
          */
 
         // tu código aquí
+            System.out.println("ULTIMA HISTORIA DE USUARIO");
+            RickMenu menus = new RickMenu(100,10);
+            receptivo.registra(menus);
+            receptivo.dispatch(gearHead);
+            receptivo.dispatch(squanchy);
+            receptivo.dispatch(abradolph);
+            receptivo.dispatch(morty);
+            receptivo.dispatch(birdpearson);
+
+            System.out.println("Pedidos de Rickmenus: \n ================== \n stock: " + menus.getStock());
+             List<String> valueList = new ArrayList<String>();
+             valueList.add("Morty");
+             valueList.add("Birdpearson");
+             valueList.add("Squanchy");
+             valueList.add("Abradolph");
+             valueList.add("GearHead");
+            System.out.println( valueList);
+
+            System.out.println("Credito de los invitados/as: \n ================== \n" + abradolph.credit() + "\n" + gearHead.credit() + "\n" + squanchy.credit() + "\n" + morty.credit() + "\n" + birdpearson.credit());
     }
 
      private static void mostrarReserva(CreditCard card, CrystalExpender expender, UfosPark ufos) {
