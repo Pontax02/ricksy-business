@@ -23,7 +23,7 @@ public class UfosPark implements GuestDispatcher {
             String ufoSold = "";
 
                 for (Map.Entry<String, String> entry : flota.entrySet()) {
-                    if (entry.getValue().equals(user)) {
+                    if (entry.getValue() == user) {
                         ufoSold = entry.getKey();
                     }
                 }
@@ -44,7 +44,7 @@ public class UfosPark implements GuestDispatcher {
     @Override
     public void dispatch(CreditCard card) {
         if (this.flota.containsValue(null)) {
-            if ((getUfoOf(card.number()).isEmpty()) && card.pay(FEE)) {
+            if ((getUfoOf(card.number()) == null) && card.pay(FEE)) {
                 assignUfo(getUfo(), card.number());
 
             } else {
