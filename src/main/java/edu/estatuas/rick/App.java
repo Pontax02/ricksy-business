@@ -244,7 +244,7 @@ public class App {
              valueList.add("GearHead");
             System.out.println( valueList);
 
-            System.out.println("Credito de los invitados/as: \n ================== \n" + abradolph );
+            System.out.println("Credito de los invitados/as: \n ================== \n" + abradolph + "\n" + morty + "\n" + gearHead + "\n" + squanchy + "\n" + birdpearson + "\n");
     }
 
      private static void mostrarReserva(CreditCard card, CrystalExpender expender, UfosPark ufos) {
