@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class UfosPark implements GuestDispatcher {
 
-    private int FEE = 500;
+    private final int FEE = 500;
     public Map<String,String> flota = new HashMap<String,String>();
 
     public UfosPark() {}
@@ -23,7 +23,7 @@ public class UfosPark implements GuestDispatcher {
             String ufoSold = "";
 
                 for (Map.Entry<String, String> entry : flota.entrySet()) {
-                    if (entry.getValue() == user) {
+                    if (entry.getValue().equals(user)) {
                         ufoSold = entry.getKey();
                     }
                 }
@@ -44,7 +44,7 @@ public class UfosPark implements GuestDispatcher {
     @Override
     public void dispatch(CreditCard card) {
         if (this.flota.containsValue(null)) {
-            if ((getUfoOf(card.number()) == "") && card.pay(FEE)) {
+            if ((getUfoOf(card.number()).isEmpty()) && card.pay(FEE)) {
                 assignUfo(getUfo(), card.number());
 
             } else {
