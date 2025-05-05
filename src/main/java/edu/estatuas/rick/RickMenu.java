@@ -11,7 +11,7 @@ public class RickMenu implements GuestDispatcher{
         }
 
         @Override
-        public void dispatch(CreditCard card) {
+        public void dispatch(PaymentMethod card) {
                 if(getStock() >= 1 && card.credit() > getPriceMenu()) {
                         buyStock((short) 1);
                         card.pay(getPriceMenu());

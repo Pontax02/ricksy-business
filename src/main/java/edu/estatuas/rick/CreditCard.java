@@ -1,6 +1,6 @@
 package edu.estatuas.rick;
 
-public class CreditCard {
+public class CreditCard implements PaymentMethod {
 
     private final String owner;
     private final String number;
@@ -13,13 +13,16 @@ public class CreditCard {
 
     }
 
+    @Override
     public String getOwner() {
         return this.owner;
     }
 
+    @Override
     public String number() {
         return this.number;
     }
+    @Override
     public double credit() {
         return this.credit;
 
@@ -31,6 +34,7 @@ public class CreditCard {
         this.credit = credit;
     }
 
+    @Override
     public boolean pay(double amount) {
 
         if (this.credit >= amount) {

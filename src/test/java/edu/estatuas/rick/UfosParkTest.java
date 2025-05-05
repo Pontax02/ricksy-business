@@ -95,7 +95,7 @@ public class UfosParkTest {
 
     @Test
     public void getUfoOfTest() {
-        CreditCard card = new CreditCard("Abradolf Lincler", "4916119711304546");
+        PaymentMethod card = new CreditCard("Abradolf Lincler", "4916119711304546");
         ufos.dispatch(card);
         assertTrue(ufos.toString().contains(ufos.getUfoOf(card.number())));
         assertEquals(2500, card.credit(), 0);

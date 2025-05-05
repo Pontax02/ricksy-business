@@ -42,7 +42,7 @@ public class UfosPark implements GuestDispatcher {
     }
 
     @Override
-    public void dispatch(CreditCard card) {
+    public void dispatch(PaymentMethod card) {
         if (this.flota.containsValue(null)) {
             if ((getUfoOf(card.number()) == null) && card.pay(FEE)) {
                 assignUfo(getUfo(), card.number());
